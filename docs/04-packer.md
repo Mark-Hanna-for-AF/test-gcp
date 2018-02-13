@@ -10,9 +10,7 @@ apt-get install unzip
 cd ~
 mkdir ~/packer
 cd ~/packer
-packer_url=$(curl https://releases.hashicorp.com/index.json | jq '{packer}' | egrep "linux.*64" | sort -r | head -1 | awk -F[\"] '{print $4}')
-curl -o packer.zip $packer_url
-unzip packer.zip
+packer_url=$(curl https://releases.hashicorp.com/index.json | jq '{packer}' | egrep "linux.*64" | sort -r | head -1 | awk -F[\"] '{print $4}') ; curl -o packer.zip $packer_url ; unzip packer.zip
 
 cd ~
 mkdir ~/terraform  
